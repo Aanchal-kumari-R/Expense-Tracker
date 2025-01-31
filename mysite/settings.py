@@ -30,7 +30,10 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-INSTALLED_APPS = [ 
+INSTALLED_APPS = [  
+    'tailwind', 
+    'theme', 
+    'django_browser_reload',
     'myapp',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -40,6 +43,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
+TAILWIND_APP_NAME = 'theme' 
+INTERNAL_IPS = [ 
+    "127.0.0.1",
+] 
+NPM_BIN_PATH = 'npm.cmd'
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -47,7 +56,9 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware', 
+    'django_browser_reload.middleware.BrowserReloadMiddleware',
+
 ]
 
 ROOT_URLCONF = 'mysite.urls'
