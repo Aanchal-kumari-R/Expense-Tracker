@@ -791,13 +791,8 @@ select {
   margin: 2.5rem;
 }
 
-.m-8 {
-  margin: 2rem;
-}
-
-.mx-auto {
-  margin-left: auto;
-  margin-right: auto;
+.m-5 {
+  margin: 1.25rem;
 }
 
 .mx-10 {
@@ -805,14 +800,9 @@ select {
   margin-right: 2.5rem;
 }
 
-.mx-5 {
-  margin-left: 1.25rem;
-  margin-right: 1.25rem;
-}
-
-.mx-7 {
-  margin-left: 1.75rem;
-  margin-right: 1.75rem;
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .mb-5 {
@@ -831,6 +821,10 @@ select {
   height: 100vh;
 }
 
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
 .items-center {
   align-items: center;
 }
@@ -839,12 +833,14 @@ select {
   justify-content: center;
 }
 
-.rounded-lg {
-  border-radius: 0.5rem;
+.space-x-40 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(10rem * var(--tw-space-x-reverse));
+  margin-left: calc(10rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
-.rounded {
-  border-radius: 0.25rem;
+.rounded-lg {
+  border-radius: 0.5rem;
 }
 
 .border {
@@ -866,9 +862,9 @@ select {
   padding-right: 2.5rem;
 }
 
-.py-10 {
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
+.px-20 {
+  padding-left: 5rem;
+  padding-right: 5rem;
 }
 
 .px-5 {
@@ -876,9 +872,19 @@ select {
   padding-right: 1.25rem;
 }
 
+.py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
 .py-2 {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+}
+
+.py-5 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
 }
 
 .font-serif {
