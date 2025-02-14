@@ -29,10 +29,13 @@ def index(request):
     # Logic to calculate 7 days expenses  
     last_week = datetime.date.today() - datetime.timedelta(days=7) 
     data = Expense.objects.filter(date__gt=last_week) 
-    weekly_sum = data.aggregate(Sum('amount'))  
+    weekly_sum = data.aggregate(Sum('amount'))    
+
+    daily_sum = Expense.objects.filter().values('date').order_by('date').annotate(sum=Sum('amount')) 
+    print(daily_sum)
 
     expense_form = ExpenseForm()
-    return render(request,'myapp/index.html',{'expense_form':expense_form,'expenses':expenses,'total_expenses':total_expenses,'yearly_sum':yearly_sum,'monthly_sum':monthly_sum,'weekly_sum':weekly_sum})  
+    return render(request,'myapp/index.html',{'expense_form':expense_form,'expenses':expenses,'total_expenses':total_expenses,'yearly_sum':yearly_sum,'monthly_sum':monthly_sum,'weekly_sum':weekly_sum,'daily_sum':daily_sum})  
 
 def edit(request,id):  
     expense = Expense.objects.get(id=id) 
